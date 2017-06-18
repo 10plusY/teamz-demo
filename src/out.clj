@@ -37,10 +37,8 @@
    so that they are adequetely spaced..."
   (clojure.string/join "" (pad-all-strings-equally players)))
 
- ;; TODO: still a seq
-
-(defn rows->team [rows]
+(defn rows->team-string [row-strings]
   "Formats the output representation of the team...
    Assumes that rows are of varying lengths and need formatting..."
-  (map pad-all-strings-equally rows))
+  (pad-all-strings-equally row-strings))
 
