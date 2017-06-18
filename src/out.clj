@@ -1,5 +1,4 @@
- (ns teamz.out
-   (:require [clojure.string :as string]))
+(ns teamz.out)
 
 (defn- pad-string [string pad-char]
   "Fundamental operation: pad a string
@@ -16,8 +15,6 @@
   "Takes collection of strings and returns
    length of longest string..."
   (apply max (map #(count %) string-coll)))
-
- ;; format
 
 (defn pad-string-to-length [length char string]
   "Recursively pad a name with a separator character

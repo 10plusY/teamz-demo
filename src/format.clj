@@ -1,4 +1,4 @@
- (ns teamz.format)
+(ns teamz.format)
 
 (defn- generate-empty-char-row [char length]
   "Generates a row of all one character"
