@@ -6,8 +6,7 @@
   (letfn [(pad-string [str ch] (str ch str ch))
           (padded-enough? [dist] (<= 0 dist 2))]
     (loop [padded string]
-      (let [pad-string (fn [str ch] (str ch str ch))
-            pad-distance (- length (count padded))]
+      (let [pad-distance (- length (count padded))]
         (if-not (padded-enough? pad-distance)
           (recur (pad-string padded char))
           padded)))))
