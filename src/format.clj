@@ -6,12 +6,16 @@
        (repeat length)
        (string/join "")))
 
+(defn- interleave-char-row [team]
+  "Put rows of characters between each row..."
+  (interleave
+    team
+    (repeat
+      (count team)
+      (generate-empty-char-row "-" (count (first team))))))
+
 (defn format-for-display [team {:keys [spacing]}]
   "Uses various formatting options to present the final string..."
   (cond
     (nil? spacing)
-    (interleave
-      team
-      (repeat
-        (count team)
-        (generate-empty-char-row "-" (count (first team)))))))
+    (interleave-char-row team)))
